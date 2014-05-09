@@ -48,7 +48,7 @@ public class ContactServlet extends HttpServlet {
 				addressRepository.create(address);
 				Contact contact = new Contact(request.getParameter("name"), address.getId());
 				contactRepository.create(contact);
-				response.sendRedirect("contacts");
+				response.sendRedirect("contact?id="+contact.getId());
 			}
 		} catch (SQLException exception){
 			throw new ServletException(exception);

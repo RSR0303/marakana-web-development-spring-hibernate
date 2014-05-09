@@ -28,7 +28,16 @@ public class ContactServlet extends HttpServlet {
 			RequestDispatcher dispatcher = request.getRequestDispatcher("jsp/addContact.jsp");
 			dispatcher.forward(request, response);
 		} else {
-			super.doGet(request, response);
+			long id = Long.parseLong(request.getParameter("id"));
+			try {
+				Contact contact = contactRepository.find(id);
+				Address address = addressRepository.find(contact.getAddressId());
+				request.setAttribute("contact", contact);
+				request.setAttribute("address", address);
+				request.getRequestDispatcher("jsp/viewContact.jsp").forward(request, response);
+			} catch (SQLException e){
+				throw new ServletException(e);
+			}
 		}
 	}
 

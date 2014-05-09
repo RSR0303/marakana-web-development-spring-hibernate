@@ -140,7 +140,7 @@ public class AddressRepository {
 	private static Address unmarshal(ResultSet results) throws SQLException {
 		Address address = new Address();
 		address.setId(results.getLong("id"));
-		address.setState(results.getString("street"));
+		address.setStreet(results.getString("street"));
 		address.setCity(results.getString("city"));
 		address.setState(results.getString("state"));
 		address.setZip(results.getString("zip"));

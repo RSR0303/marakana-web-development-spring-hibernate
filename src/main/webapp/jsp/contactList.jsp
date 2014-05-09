@@ -7,7 +7,7 @@
 		<h1>Contacts</h1>
 		<ul>
 			<c:forEach var="contact" items="${contacts}">
-				<li><a href="">${contact.name}</a></li>				
+				<li><a href="contact?id=${contact.id}">${contact.name}</a></li>				
 			</c:forEach>	
 		</ul>
 		<a href="contact?add">Add a new contact</a>

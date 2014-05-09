@@ -4,7 +4,7 @@
 	</head>
 	<body>
 		<h1>Add Contact</h1>
-		<form action="contact?add" method="post">
+		<form action="contact" method="post">
 			<input type="hidden" name="add"  />
 			<ul>
 				<li>Name : <input type="text" name="name"/></li>

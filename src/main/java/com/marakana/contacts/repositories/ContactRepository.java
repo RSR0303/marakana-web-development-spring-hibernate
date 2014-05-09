@@ -129,7 +129,7 @@ public class ContactRepository {
 				String sql = "UPDATE contact SET name = '"
 						+ contact.getName() + "', address_id = "
 						+ contact.getAddressId()
-						+ "' WHERE id = " + contact.getId() + "";
+						+ " WHERE id = " + contact.getId() + "";
 				statement.executeUpdate(sql);
 			} finally {
 				statement.close();

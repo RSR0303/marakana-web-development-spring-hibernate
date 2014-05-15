@@ -16,6 +16,11 @@
 			</ul>		
 			<input type="submit" value="Edit" />		
 		</form>
+		<form action="contact" method="post">
+			<input type="hidden" name="delete"  />
+			<input type="hidden" name="id" value="${contact.id}" />
+			<input type="submit" value="Delete" />		
+		</form>
 		<a href="contacts">Back to contact list</a>
 	</body>
 </html>

@@ -21,13 +21,9 @@ public class ContactListServlet extends HttpServlet {
 	private final ContactRepository contactRepository = new ContactRepository();
        
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		try {
-			request.setAttribute("contacts", contactRepository.findAll());
-			RequestDispatcher dispatcher = request.getRequestDispatcher("jsp/contactList.jsp");
-			dispatcher.forward(request, response);
-		} catch (SQLException exception) {
-			throw new ServletException(exception);
-		}
+		request.setAttribute("contacts", contactRepository.findAll());
+		RequestDispatcher dispatcher = request.getRequestDispatcher("jsp/contactList.jsp");
+		dispatcher.forward(request, response);
 	}
 
 

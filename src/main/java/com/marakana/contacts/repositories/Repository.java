@@ -1,5 +1,7 @@
 package com.marakana.contacts.repositories;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.Persistence;
 
@@ -10,6 +12,10 @@ public class Repository<E> {
 	
 	public Repository(Class<E> entityClass) {
 		this.entityClass = entityClass;
+	}
+	
+	public List<E> findAll() {
+		return em.createQuery("from " + entityClass.getSimpleName(), entityClass).getResultList();
 	}
 	
 	public E find(long id) {
